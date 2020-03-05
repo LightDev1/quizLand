@@ -1,6 +1,11 @@
 $parentBorder: 2px solid red;
 $childBorder: 1px solid blue;
 
+*, *:after, *:before {
+    box-sizing: border-box;
+}
+
+
 body {
     font-size: 25px;
 
