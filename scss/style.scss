@@ -1,8 +1,19 @@
 $parentBorder: 2px solid red;
 $childBorder: 1px solid blue;
 
+@mixin resultStyle() {
+    color: #545A68;
+    font-weight: 800;
+    margin-top: 10px;
+    font-size: 35px;
+}
+
 *, *:after, *:before {
     box-sizing: border-box;
+}
+
+* {
+    transition: 0.2s;
 }
 
 
@@ -80,6 +91,71 @@ body {
                 }
             }
 
+        }
+
+        .result__container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            border: 5px solid #8F96A1;
+            border-radius: 30px;
+            padding-left: 15px;
+            padding-right: 15px;
+            height: 400px;
+
+            .result {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+
+                .text {
+                    @include resultStyle();
+                }
+
+                .result__text {
+                    @include resultStyle();
+                }
+            }
+
+            .right__answers {
+               .show {
+                font-size: 16px;
+                color: #545A68;
+                font-weight: 800;
+                margin-top: 40px;
+                cursor: pointer;
+
+                &:hover {
+                    color: #8F96A1;
+                }
+
+               }
+
+            }
+
+            .btn__container {
+                display: flex;
+                justify-content: flex-end;
+                button {
+                    background-color: #1AA135;
+                    font-size: 18px;
+                    color: #ffffff;
+                    width: 300px;
+                    height: 60px;
+                    margin-top: 15px;
+                    border-radius: 30px;
+                    border: none;
+                    outline: none;
+                    cursor: pointer;
+                    
+                    &:hover {
+                        background-color: #45C35E;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5)
+                    }
+                }
+            }
         }
     }
 
